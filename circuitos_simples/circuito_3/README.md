@@ -1,4 +1,4 @@
-# Circuito 2
+# Circuito 3
 Un circuito simple que utiliza como fuente 5v para encender 1 LED rojo de 2V y 0.02A (ideal).
 La idea era poder encender LEDs instantáneamente combinandolo de manera paralela.
 
