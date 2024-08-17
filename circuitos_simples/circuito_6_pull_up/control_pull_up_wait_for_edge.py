@@ -7,16 +7,20 @@ GPIO.setmode(GPIO.BCM)
 
 # configurar pin
 PIN = 18
-GPIO.setup(PIN, GPIO.IN, pull_up_down_=GPIO.PUD_UP)
+GPIO.setup(PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
 
 def press():
 	print("Interruptor presionado !")
 
+
 # waiting event
-GPIO.add_event_detect(PIN, GPIO.FALLING, callback=press)
+GPIO.wait_for_edge(PIN, GPIO.FALLING)
+press()
 
-print("Esperando 10s")
-time.sleep(10)
-
+# Salida del programa
 print("Limpiando GPIO")
 GPIO.cleanup()
+
+print("Saliendo del programa...")
+exit()
