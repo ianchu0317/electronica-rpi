@@ -10,10 +10,17 @@ GPIO.setmode(GPIO.BCM)
 
 
 # exit program
-def finish_program(channel):
+def callback_button(channel):
 	global RUN
+	global seq_counter
+
 	print("Button pressed !!!")
-	RUN = False 
+	if seq_counter + 1 < len(seq_list):
+		seq_counter += 1
+	else:
+		seq_counter = 0
+	print("Change to sequence ", seq_counter)
+	#RUN = False 
 
 
 # turn all LED ON
@@ -98,23 +105,23 @@ GPIO.setup(led_pin, GPIO.OUT, initial=GPIO.LOW)
 # pin button configuration to stop program
 pin_button = 17  # RPI BCM PIN 17
 GPIO.setup(pin_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.add_event_detect(pin_button, GPIO.FALLING, callback=finish_program)
+GPIO.add_event_detect(pin_button, GPIO.FALLING, callback=callback_button, bouncetime=200)
 
 # program setting
 RUN = True
-seq_list = [run_wave_effect, run_wave_effect_reverse, alternate_triple_leds]  # all sequences
+seq_list = [run_wave_effect, run_wave_effect_reverse, alternate_triple_leds, run_transition]  # all sequences
 seq_counter = 0
 
 
 # main loop
 def main():
-	while RUN:
-		# loop each sequence
-		for func in seq_list:
-			for i in range(3):
-				func()
-			run_transition()
-
+	try:
+		while RUN:
+			seq_list[seq_counter]()
+	# exit loop
+	except KeyboardInterrupt:
+		print("Exit program !")
+		pass
 
 if __name__ == "__main__":
 	main()
