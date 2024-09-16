@@ -14,4 +14,9 @@ Repositorio de inicios autodidacta en electrónica
 
 ## Cosas a tener en cuenta (Preguntas)
 - Capacidad de voltaje en pines: https://raspberrypi.stackexchange.com/questions/3209/what-are-the-min-max-voltage-current-values-the-gpio-pins-can-handle
-  
+
+---
+# Arduino
+- Página oficial: https://docs.arduino.cc/
+- Documentación de programación: https://docs.arduino.cc/programming/
+- Diagrama Arduino UNO R3 SMD: https://docs.arduino.cc/resources/pinouts/A000073-full-pinout.pdf
