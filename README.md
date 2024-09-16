@@ -20,3 +20,6 @@ Repositorio de inicios autodidacta en electrónica
 - Página oficial: https://docs.arduino.cc/
 - Documentación de programación: https://docs.arduino.cc/programming/
 - Diagrama Arduino UNO R3 SMD: https://docs.arduino.cc/resources/pinouts/A000073-full-pinout.pdf
+- Ejemplos: https://docs.arduino.cc/built-in-examples/
+
+- Diferencia Digital vs Analog: https://etwinworkshop.medium.com/exploring-analog-and-digital-pins-illuminating-the-path-to-arduino-mastery-27fb3b02b8f3
