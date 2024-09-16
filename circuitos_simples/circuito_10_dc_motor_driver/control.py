@@ -6,15 +6,15 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 en_1_ch = 12 # pwm pin
-in_1 = 23
-in_2 = 24
+in_1 = 16
+in_2 = 20
 
 # config GPIO
 GPIO.setup(en_1_ch, GPIO.OUT)
 en_1 = GPIO.PWM(en_1_ch, 500)  # 500 Hz
 GPIO.setup(in_1, GPIO.OUT)
 GPIO.setup(in_2, GPIO.OUT)
-en_1.start(40) # 50% dc
+en_1.start(30) # 50% dc
 
 def turn_1():
 	GPIO.output(in_1, GPIO.HIGH)
